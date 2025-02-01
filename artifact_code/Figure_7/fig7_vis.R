@@ -21,19 +21,11 @@ ord_mets <- c( 'test_auc', 'test_acc', 'test_f1', 'irt_ability',
 ord_names <- c( 'AUC', 'Acc.',  'F1 Score', 'IRT Ability',
                 'Sex ADI', 'Age ADI', 'Race ADI', 'Educ. ADI', 'Inc. ADI', 'ESL ADI')
 
-
-ord_mets[1:4]
-
 perform_met_names <- ord_names
 names(perform_met_names) <- ord_mets
 
 strat_names <- c( 'Boundary-hard', 'Random' )
 names(strat_names) <- c( 'Constant', 'None' )
-
-
-strat_names <- c( 'Anxiety', 'Numeracy', 'Literacy', 'Trust', 'Depression' )
-names(strat_names) <- c( 'Anxiety', 'Numeracy', 'SubjectiveLit', 'TrustPhys', 'wer' )
-
 
 
 gath_perform <- test_perform_full %>%
@@ -59,5 +51,5 @@ gath_perform %>%
         legend.position = 'bottom')
 
 
-ggsave( "Appendix A9/perform_by_met_v2.png", height=5, width=8, dpi = 180 )
+ggsave( "Figure_7/perform_by_met_v2.png", height=5, width=8, dpi = 180 )
 

@@ -29,6 +29,6 @@ names(comp_lst) <- c( 'boundary_prox', 'losses', 'pvi', 'times_forgotten',
 this_plot <- produce_scorr_fig( micro_corr_df_wer, sort='paper' )
 
 
-ggsave( "Figure 3/micro_scorr_inc_wer_v2.png", height=5, width=5, dpi = 180 )
+ggsave( "Figure_3/micro_scorr_inc_wer_v2.png", height=5, width=5, dpi = 180 )
 
 

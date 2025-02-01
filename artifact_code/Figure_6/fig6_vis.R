@@ -26,8 +26,10 @@ comp_lst <- c( 'BP', 'Loss', 'PVI', 'TF', 'PH', 'IRT', 'SL' )
 names(comp_lst) <- c( 'boundary_prox', 'losses', 'pvi', 'times_forgotten',
                       'instance_hardness', 'irt_difficulty', 'tok_len' )
 
-these_svars <- c( 'Anxiety', 'Numeracy', 'Literacy', 'Trust', 'Depression' )
-names(these_svars) <- c( 'Anxiety', 'Numeracy', 'SubjectiveLit', 'TrustPhys', 'wer'  )
+# these_svars <- c( 'Anxiety', 'Numeracy', 'Literacy', 'Trust', 'Depression' )
+# names(these_svars) <- c( 'Anxiety', 'Numeracy', 'SubjectiveLit', 'TrustPhys', 'wer'  )
+these_svars <- c( 'Anxiety', 'Numeracy', 'Literacy', 'Trust' )
+names(these_svars) <- c( 'Anxiety', 'Numeracy', 'SubjectiveLit', 'TrustPhys'  )
 
 
 these_plots <- list()
@@ -57,18 +59,21 @@ Numeracy_plot <- Numeracy_plot +
 Literacy_plot <- Literacy_plot +
   scale_color_discrete(guide='none')+
   theme(axis.title.x=element_blank())
-Depression_plot <- Depression_plot +
-  scale_color_discrete(guide='none')+
-  theme(axis.title.x=element_blank())
+# Depression_plot <- Depression_plot +
+#   scale_color_discrete(guide='none')+
+#   theme(axis.title.x=element_blank())
 
 
 # TODO; remove legends for all but bottom right -- play with font
 
-sv_fig <- ggarrange(Anxiety_plot, Numeracy_plot, Literacy_plot,
-                    Trust_plot, Depression_plot,
-                    ncol = 3, nrow = 2)
+# sv_fig <- ggarrange(Anxiety_plot, Numeracy_plot, Literacy_plot,
+#                     Trust_plot, Depression_plot,
+#                     ncol = 3, nrow = 2)
 
-ggsave( "Appendix A7/micro_scorr_by_svar_v4.png", height=16, width=16, dpi = 180 )
+sv_fig <- ggarrange(Anxiety_plot, Numeracy_plot, Literacy_plot, Trust_plot,
+                    ncol = 2, nrow = 2)
+
+ggsave( "Figure_6/micro_scorr_by_svar_v4.png", height=16, width=16, dpi = 180 )
 
 
 

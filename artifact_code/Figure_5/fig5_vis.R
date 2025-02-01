@@ -26,4 +26,4 @@ ggpairs( model_diff %>% select(comp_cols) , progress=FALSE,
   theme(strip.text = element_markdown(),
         legend.position = 'bottom')
 
-ggsave( "Figure 5/micro_pairplot_v2.png", height=12, width=16, dpi = 180 )
+ggsave( "Figure_5/micro_pairplot_v2.png", height=12, width=16, dpi = 180 )
