@@ -11,7 +11,8 @@ setwd(base_path)
 source('utils/plotting_helpers.R')
 
 
-
+# NOTE; Depression data with 'wer' (Word Error Rate) score variable not publicly available via IRB
+# performance data can be generated in ArtifactPreprocessing.ipynb
 test_perform_full <- read.csv( 'data/test_perform_full.csv' )
 
 

@@ -17,6 +17,7 @@ model_diff <- read.csv( 'data/model_diff.csv' )
 comp_cols <- c( 'boundary_prox', 'losses', 'pvi', 'times_forgotten',
                 'instance_hardness', 'irt_difficulty', 'tok_len' )
 
+# request to see the entire correlation plot across complexity metrics
 # WARNING: takes ~5min
 ggpairs( model_diff %>% select(comp_cols) , progress=FALSE,
          upper = list(continuous = wrap("cor", method = "spearman") ),

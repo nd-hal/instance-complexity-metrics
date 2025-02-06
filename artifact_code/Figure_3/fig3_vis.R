@@ -10,12 +10,10 @@ current_path = rstudioapi::getActiveDocumentContext()$path
 base_path <- paste0( str_split( current_path, "artifact_code" )[[1]][1], 'artifact_code/'  )
 setwd(base_path)
 
-
-
 source('utils/plotting_helpers.R')
 
 
-# NOTE; this includes WER
+# # NOTE; Depression data with 'wer' (Word Error Rate) score variable not publicly available via IRB
 # NOTE; NAs come from NA scorrs -- which correctly return NA for metrics with zero variance
 # data can be produced from fig3_preprocess.ipynb
 micro_corr_df_wer <- read.csv( 'data/micro_corr_df_wer.csv' )

@@ -5,13 +5,12 @@ import pandas as pd
 import torch
 from torch.utils.data import DataLoader, Dataset
 
-# from utils.data_processing import *
 
 ###################################################################
 ################### Loading Data from Local Files #################
 ###################################################################
-# HAL PSYCHOMETRIC NLP
 
+# HAL PSYCHOMETRIC NLP
 def load_and_process_demo(directory, score_variable):
     id_table = pd.read_csv(directory+'Data_SurveyPlusDemographics.txt', sep='\t', low_memory=False)
 
@@ -100,33 +99,6 @@ def load_files(directory, score_variable):
         'val_data': val_data.dropna().reset_index(drop=True),
         'test_data': test_data.dropna().reset_index(drop=True)
     }
-
-
-# ADVERSE DRUG DETECTION
-# only one function needed to extract files
-def load_drug_data(directory, subset=False):
-    train_data = pd.read_csv(directory+'TextFiles/train_DrugExp_Text.tsv', sep='\t', header=None)
-    train_data.columns = ['label', 'text']
-    train_data['score'] = 0
-    val_data = pd.read_csv(directory+'TextFiles/validation_DrugExp_Text.tsv', sep='\t', header=None)
-    val_data.columns = ['label', 'text']
-    val_data['score'] = 0
-    test_data = pd.read_csv(directory+'TextFiles/test_DrugExp_Text.tsv', sep='\t', header=None)
-    test_data.columns = ['label', 'text']
-    test_data['score'] = 0
-
-    if subset:
-        return {
-            'train_data': stratified_sample(train_data.dropna().reset_index(drop=True), 200),
-            'val_data': stratified_sample(val_data.dropna().reset_index(drop=True), 100),
-            'test_data': stratified_sample(test_data.dropna().reset_index(drop=True), 100)
-        }
-    else:
-        return {
-            'train_data': train_data.dropna().reset_index(drop=True),
-            'val_data': val_data.dropna().reset_index(drop=True),
-            'test_data': test_data.dropna().reset_index(drop=True)
-        }
 
 
 # ZOOM DEPRESSION DATA

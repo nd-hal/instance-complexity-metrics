@@ -15,12 +15,11 @@ source('utils/plotting_helpers.R')
 
 
 
-# NOTE; this includes WER
+# NOTE; Depression data with 'wer' (Word Error Rate) score variable not publicly available via IRB
 ## data can be produced from fig3_preprocess.ipynb
+# NOTE; NAs come from NA scorrs -- which correctly return NA for metrics with zero variance
 micro_corr_df_wer <- read.csv( 'data/micro_corr_df_wer.csv' )
 
-
-# NOTE; NAs come from NA scorrs -- which correctly return NA for metrics with zero variance
 
 comp_lst <- c( 'BP', 'Loss', 'PVI', 'TF', 'PH', 'IRT', 'SL' )
 names(comp_lst) <- c( 'boundary_prox', 'losses', 'pvi', 'times_forgotten',
@@ -64,8 +63,8 @@ Literacy_plot <- Literacy_plot +
 #   theme(axis.title.x=element_blank())
 
 
-# TODO; remove legends for all but bottom right -- play with font
-
+# NOTE; missing WER plot due to IRB restrictions on data
+# this will be a 2x2 instead of the 2x3 in the paper
 # sv_fig <- ggarrange(Anxiety_plot, Numeracy_plot, Literacy_plot,
 #                     Trust_plot, Depression_plot,
 #                     ncol = 3, nrow = 2)

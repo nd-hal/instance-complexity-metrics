@@ -3,6 +3,12 @@ import numpy as np
 import pandas as pd
 
 
+########################################################################
+################### Helpers for calculating instance   #################
+################### hardness and creating data objects #################
+################### for results and fairness           #################
+########################################################################
+
 
 def remove_duplicate_id(this_id, this_ledger):
     rep_df = this_ledger[( (this_ledger['ID']!=this_id) &
@@ -65,9 +71,7 @@ def load_and_clean_ledgers():
 
 
 ## PYHARD ##
-
 # need to create train predictions (since ledger only stores val and test)
-
 # modified to work with df instead of dataframe
 def write_predictions(model_name, test_probs, tdf, split_full):
     tdf = tdf.reset_index(drop=True)
