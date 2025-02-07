@@ -1,6 +1,6 @@
 # instance-complexity-metrics
 
-1. Download the instance-level prediction (i.e., "ledger") data from [Zenodo](https://zenodo.org/records/14834841)
+1. Download the instance-level prediction (i.e., "ledger") data from [Zenodo](https://zenodo.org/records/14834909)
     * Warning: downloading a large file (4.0 GB) can take up to 25min
     * Alternatively, researchers can use the top few rows shown on Zenodo to create their own ledgers from instance-level model outputs
 3. Download the input data (i.e., DataCVFolds.zip and Data_SurveyPlusDemographics.txt) from the [FairPsych NLP repository](https://github.com/nd-hal/fair-psych-nlp/tree/main/Data) and place Data_SurveyPlusDemographics.txt into the DataCVFolds/ directory.
