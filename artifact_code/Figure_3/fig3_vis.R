@@ -19,8 +19,8 @@ source('utils/plotting_helpers.R')
 micro_corr_df_wer <- read.csv( 'data/micro_corr_df_wer.csv' )
 
 
-comp_lst <- c( 'BP', 'Loss', 'PVI', 'TF', 'PH', 'IRT', 'SL' )
-names(comp_lst) <- c( 'boundary_prox', 'losses', 'pvi', 'times_forgotten',
+comp_lst <- c( 'BD', 'Loss', 'PVI', 'TF', 'PH', 'IRT', 'SL' )
+names(comp_lst) <- c( 'boundary_dist', 'losses', 'pvi', 'times_forgotten',
                       'instance_hardness', 'irt_difficulty', 'tok_len' )
 
 

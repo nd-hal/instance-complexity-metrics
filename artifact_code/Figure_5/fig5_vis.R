@@ -14,7 +14,7 @@ source('utils/plotting_helpers.R')
 
 model_diff <- read.csv( 'data/model_diff.csv' )
 
-comp_cols <- c( 'boundary_prox', 'losses', 'pvi', 'times_forgotten',
+comp_cols <- c( 'boundary_dist', 'losses', 'pvi', 'times_forgotten',
                 'instance_hardness', 'irt_difficulty', 'tok_len' )
 
 # request to see the entire correlation plot across complexity metrics
