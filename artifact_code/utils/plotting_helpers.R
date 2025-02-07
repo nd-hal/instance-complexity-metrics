@@ -3,9 +3,9 @@ library(glue)
 
 create_color_labs <- function(these_metrics){
   # map metrics to colors
-  comp_cols = c( 'boundary_prox', 'losses', 'pvi', 'times_forgotten',
+  comp_cols = c( 'boundary_dist', 'losses', 'pvi', 'times_forgotten',
                  'instance_hardness', 'irt_difficulty', 'tok_len' )
-  comp_cols = c( 'BP', 'Loss', 'PVI', 'TF', 'PH', 'IRT', 'SL' )
+  comp_cols = c( 'BD', 'Loss', 'PVI', 'TF', 'PH', 'IRT', 'SL' )
   met_to_col_lst = list( 'darkred', 'navy', 'darkred', 'navy',
                          'navy', 'navy', 'navy' )
   names(met_to_col_lst) <- comp_cols
@@ -37,9 +37,9 @@ create_color_labs <- function(these_metrics){
 
 
 color_labeller <- function(mets){
-  comp_cols = c( 'boundary_prox', 'losses', 'pvi', 'times_forgotten',
+  comp_cols = c( 'boundary_dist', 'losses', 'pvi', 'times_forgotten',
                  'instance_hardness', 'irt_difficulty', 'tok_len' )
-  comp_cols = c( 'BP', 'Loss', 'PVI', 'TF', 'PH', 'IRT', 'SL' )
+  comp_cols = c( 'BD', 'Loss', 'PVI', 'TF', 'PH', 'IRT', 'SL' )
   
   col_mets <- c()
   for(met in mets){
@@ -230,8 +230,8 @@ format_print_metrics <- function(in_corr_df){
 
 produce_scorr_fig <- function(in_corr_df, sort='alpha', this_col='black', this_svar=NULL) {
   # map metric names
-  comp_lst <- c( 'BP', 'Loss', 'PVI', 'TF', 'PH', 'IRT', 'SL' )
-  names(comp_lst) <- c( 'boundary_prox', 'losses', 'pvi', 'times_forgotten',
+  comp_lst <- c( 'BD', 'Loss', 'PVI', 'TF', 'PH', 'IRT', 'SL' )
+  names(comp_lst) <- c( 'boundary_dist', 'losses', 'pvi', 'times_forgotten',
                         'instance_hardness', 'irt_difficulty', 'tok_len' )
   # format to print
   micro_corr_df_print <- format_print_metrics( in_corr_df )
